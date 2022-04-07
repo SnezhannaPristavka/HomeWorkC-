@@ -22,10 +22,10 @@ void Print(int[,] collection)
         Console.WriteLine();
     }
 }
-int FindElement(int[,] arr, int i, int j)
+string  FindElement(int[,] arr, int i, int j)
 {
-    if (i < arr.GetLength(0) && j < arr.GetLength(1)) return arr[i, j];
-    else return 0;
+    if (i < arr.GetLength(0) && j < arr.GetLength(1)) return Convert.ToString(arr[i, j]);
+    else return "Такого элемента в массиве нет.";
 }
 
 int row = 5;
@@ -39,5 +39,4 @@ int firstPos = Convert.ToInt32(Console.ReadLine());
 Console.Write("Enter the number of the second position: ");
 int secondPos = Convert.ToInt32(Console.ReadLine());
 
-if (FindElement(matrix, firstPos, secondPos) == 0) Console.WriteLine("This element does not exist.");
-else Console.Write("Element " + FindElement(matrix, firstPos, secondPos) + " belongs to given position");
+Console.Write(FindElement(matrix, firstPos, secondPos));
